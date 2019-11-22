@@ -10,6 +10,7 @@ class MainActivity : AppCompatActivity() {
     private var editText: EditText? = null
     private var button: Button? = null
     private var textView: TextView?= null
+    private var num = 0
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,5 +20,10 @@ class MainActivity : AppCompatActivity() {
         editText = findViewById<EditText>(R.id.editText)
         button = findViewById<Button>(R.id.button)
         textView = findViewById<TextView>(R.id.textView)
+
+        button?.setOnClickListener {
+            num++
+            textView?.append("Clicked $num times \n")
+        }
     }
 }
