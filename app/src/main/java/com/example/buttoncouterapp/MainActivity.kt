@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        setContentView(R.layout.landscape_layout)
+        setContentView(R.layout.activity_landscape)
 
         val editText: EditText = findViewById<EditText>(R.id.editText)
         val editTextLand: EditText = findViewById<EditText>(R.id.editTextLand)
