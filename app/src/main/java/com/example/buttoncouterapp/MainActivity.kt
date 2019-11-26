@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setContentView(R.layout.landscape_layout)
 
         val editText: EditText = findViewById<EditText>(R.id.editText)
         button = findViewById<Button>(R.id.button)
@@ -26,5 +27,6 @@ class MainActivity : AppCompatActivity() {
             var typedText: String = editText.text.toString()
             textView?.append(" $typedText \n")
         }
+
     }
 }
