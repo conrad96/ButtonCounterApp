@@ -8,10 +8,11 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+private const val TEXT_CONTENTS = "TextContents"
+private var TAG = "LOGCAT: "
 
 class MainActivity : AppCompatActivity() {
-    private var TAG = "LOGCAT: "
-    private var TEXT_CONTENTS = null
+
 
     private var button: Button? = null
     private var textView: TextView?= null
@@ -33,7 +34,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
-        Log.d(TAG, "onRestoreInstance invoked")
+        super.onRestoreInstanceState(savedInstanceState)
+        textView?.text = savedInstanceState?.getString(TEXT_CONTENTS, "")
     }
 
     override fun onSaveInstanceState(outState: Bundle, outPersistentState: PersistableBundle) {
