@@ -11,6 +11,7 @@ import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
     private var TAG = "LOGCAT: "
+    private var TEXT_CONTENTS = null
 
     private var button: Button? = null
     private var textView: TextView?= null
@@ -31,23 +32,13 @@ class MainActivity : AppCompatActivity() {
             Log.d(TAG, "onClick invoked")
         }
     }
-
-    override fun onResume() {
-        super.onResume()
-        Log.d(TAG, "onResume invoked")
-    }
-
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         Log.d(TAG, "onRestoreInstance invoked")
     }
 
     override fun onSaveInstanceState(outState: Bundle, outPersistentState: PersistableBundle) {
         super.onSaveInstanceState(outState, outPersistentState)
-        Log.d(TAG, "onSaveInstanceState invoked")
+        outState?.putString(TEXT_CONTENTS, textView?.text.toString())
     }
 
-    override fun onStop() {
-        super.onStop()
-        Log.d(TAG, "onStop invoked")
-    }
 }
